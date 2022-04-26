@@ -1,0 +1,100 @@
+/* ========== */
+.about {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4rem;
+  text-align: center;
+}
+
+.about h2 {
+  letter-spacing: 3px;
+  margin-bottom: 2rem;
+  position: relative;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.line {
+  position: absolute;
+  bottom: -0.7rem;
+  left: 50%;
+  width: 150px;
+}
+
+.about p {
+  margin-bottom: 10px;
+}
+
+.my-photo {
+  max-width: 200px;
+  position: relative;
+  margin-bottom: 0;
+  overflow: hidden;
+}
+
+.my-photo::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    0deg,
+    white,
+    rgba(255, 255, 255, 0.8503),
+    rgba(255, 255, 255, 0.503),
+    rgba(255, 255, 255, 0.352),
+    rgba(255, 255, 255, 0.22),
+    rgba(255, 255, 255, 0.044),
+    rgba(255, 255, 255, 0)
+  );
+  overflow: hi;
+}
+
+.btn-resume {
+  display: flex;
+  align-items: center;
+  max-width: fit-content;
+  margin: 1rem auto;
+  gap: 5px;
+  background-color: var(--blue-clr);
+  padding: 0.5rem 1rem;
+  color: white;
+  border-radius: 10px;
+  transition: all 250ms ease-in-out;
+}
+
+.btn-resume:hover {
+  background-color: var(--blue-hover-clr);
+}
+
+@media screen and (min-width: 700px) {
+  .about {
+    flex-direction: row;
+    text-align: left;
+  }
+
+  .my-photo {
+    max-width: 400px;
+    margin-bottom: 2rem;
+  }
+
+  .btn-resume {
+    margin-left: 0;
+    margin-top: 2rem;
+  }
+
+  .about h2 {
+    margin-left: 0;
+  }
+
+  .line {
+    width: 200px;
+    left: 55%;
+    bottom: -0.9rem;
+  }
+}
