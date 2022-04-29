@@ -7,7 +7,6 @@
   z-index: 10;
   background-color: rgba(255, 255, 255, 0.346);
   backdrop-filter: blur(10px);
-  height: 3.2rem;
   transition: all 300ms ease-in-out;
 }
 
@@ -37,14 +36,11 @@ nav a:hover {
   color: var(--light-clr);
 }
 
-.hide {
-  height: 0%;
-}
-
 @media screen and (min-width: 700px) {
   nav span {
     display: block;
   }
+  
 
   nav {
     justify-content: center;

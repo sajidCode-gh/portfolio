@@ -15,7 +15,7 @@ function About() {
   useEffect(() => {
     const element = el.current;
     tl.current = gsap
-      .timeline()
+      .timeline({ duration: 0 })
       .fromTo(q("h1"), { y: 20, opacity: 0 }, { opacity: 1, y: 0 })
       .fromTo(q("h2"), { y: 20, opacity: 0 }, { opacity: 1, y: 0 })
       .fromTo(q("p"), { y: 20, opacity: 0 }, { opacity: 1, y: 0 })
@@ -39,7 +39,7 @@ function About() {
   }, []);
   // const handleLoad = () => tl.current.play();
   return (
-    <div className="section">
+    <div className="section" id="about">
       <section className="container about" ref={el}>
         <div className="my-photo">
           <img src={photo} />

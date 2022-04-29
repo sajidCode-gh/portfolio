@@ -5,34 +5,38 @@ import MarkEmailUnreadTwoToneIcon from "@mui/icons-material/MarkEmailUnreadTwoTo
 import "./header.css";
 import ScrollTrigger from "gsap/ScrollTrigger";
 import gsap from "gsap";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
+import { Link } from "react-router-dom";
 const Header = () => {
+  const header = useRef();
   gsap.registerPlugin(ScrollTrigger);
   const [scroll, setScroll] = useState(0);
   const [hide, setHide] = useState(false);
   useEffect(() => {
-    ScrollTrigger.create({
-      trigger: document.body,
-      start: "top top",
-      onUpdate: (self) =>
-        self.direction === 1 ? setHide(true) : setHide(false),
-    });
+    // ScrollTrigger.create({
+    //   trigger: document.body,
+    //   start: "top top",
+    //   onUpdate: (self) =>
+    //     self.direction === 1 ? setHide(true) : setHide(false),
+    // });
+
+    gsap.fromTo(header.current, { height: "0%" }, { height: "3.2rem" });
   }, []);
   return (
-    <header className={hide ? "hide header" : "header"}>
+    <header className={hide ? "hide header" : "header"} ref={header}>
       <nav className="container">
-        <a href="#home">
+        <Link to="/">
           <HomeTwoToneIcon fontSize="large" /> <span>Home</span>
-        </a>
-        <a href="#projects">
+        </Link>
+        <Link to="/projects">
           <WorkTwoToneIcon fontSize="large" /> <span>Projects</span>
-        </a>
-        <a href="#skills">
+        </Link>
+        <Link to="/skills">
           <HandymanTwoToneIcon fontSize="large" /> <span>Skills</span>
-        </a>
-        <a href="#contact">
+        </Link>
+        <Link to="/contact">
           <MarkEmailUnreadTwoToneIcon fontSize="large" /> <span>Contact</span>
-        </a>
+        </Link>
       </nav>
     </header>
   );

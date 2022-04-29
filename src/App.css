@@ -20,7 +20,6 @@ html {
 body {
   font-family: "inter", sans-serif;
   margin: 0;
-  min-height: 100vh;
   line-height: 1.2;
 }
 
@@ -32,7 +31,7 @@ p,
 h1,
 h2,
 h3 {
-  max-width: 60ch;
+  max-width: 58ch;
   margin: 0;
 }
 
@@ -50,8 +49,10 @@ p {
   color: var(--light-clr);
 }
 
-a {
+a,
+button {
   text-decoration: none;
+  transition: all 250ms ease-in-out;
 }
 
 img {
@@ -68,13 +69,13 @@ img {
 }
 
 .section {
-  min-height: 100vh;
-  width: 100%;
-  box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.12);
   border-radius: 0 0 10px 10px;
 }
 
 @media screen and (max-width: 800px) {
+  .section {
+    margin-bottom: 6rem;
+  }
   h1 {
     font-size: 30px;
   }
